@@ -12,6 +12,12 @@ define [ 'cs!app' ], (CDSCeunes) ->
         executeAction ListController.listPreferences, undefined
         return
       return
+
+    CDSCeunes.on 'preferences:list', ->
+      CDSCeunes.navigate 'preferences'
+      API.listPreferences()
+      return
+
     CDSCeunes.Routers.on 'start', ->
       console.log 'Preferences Router'
       new (PreferencesAppRouter.Router)(controller: API)
