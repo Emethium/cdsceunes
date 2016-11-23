@@ -24,8 +24,15 @@ define [
 
     Form = Marionette.View.extend(
       template: 'department/form'
-      ui: 'submitData': '.js-submit-department'
+      ui:
+        'submitData': '.js-submit-department'
+        'form': '#department-form'
+      events:
+        'submit @ui.form': 'submitData'
       title: 'Novo Departamento'
+      onRender: ->
+        @ui.submitData.text 'Enviar'
+        return
       submitData: (e) ->
         e.preventDefault()
         data = Backbone.Syphon.serialize(this)

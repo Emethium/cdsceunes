@@ -23,12 +23,6 @@ define [
                 (position) ->
                   position.get('name').indexOf(criterion) > -1
             )
-            list_layout.on 'childview:position:new', ->
-              console.log 'Showing new position dialog'
-              CDSCeunes.regions.showChildView 'dialog', new (View.Form)(
-                model: CDSCeunes.dataRequest 'position:entity:new'
-              )
-              return
 
             list_positions = new (View.PositionsList)(collection: filtered_positions)
 
@@ -36,6 +30,26 @@ define [
               list_layout.showChildView 'panelRegion', list_panel
               list_layout.showChildView 'positionsRegion', list_positions
               return # end show
+
+            list_layout.on 'childview:position:new', ->
+              form_view = new (View.Form)(
+                model: CDSCeunes.dataRequest 'position:entity:new'
+              )
+              CDSCeunes.regions.showChildView 'dialog', form_view
+
+              form_view.on 'position:form:submit', (data) ->
+                console.log "Position post data request"
+                $.when(CDSCeunes.dataRequest 'position:entity:new').done (position) ->
+                  position.save(data,
+                    success: (data) ->
+                      positions.add(teacher)
+                      CDSCeunes.regions.getRegion('dialog').empty()
+                      return
+                  )
+                  return
+                return
+              return
+            #return
 
             CDSCeunes.regions.showChildView 'main', list_layout
             return # end promise

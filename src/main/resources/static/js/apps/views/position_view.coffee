@@ -15,6 +15,7 @@ define [
       className: 'row'
       events:
         'click button.js-new-position': 'newPosition'
+
       newPosition: (e) ->
         e.preventDefault()
         console.log 'new position'
@@ -24,7 +25,11 @@ define [
 
     Form = Marionette.View.extend(
       template: 'position/form'
-      ui:'submitData': '.js-submit-position'
+      ui:
+        'submitData': '.js-submit-position'
+        'form': '#position-form'
+      events:
+        'submit @ui.form': 'submitData'
       title: 'Novo Cargo'
       submitData: (e) ->
         e.preventDefault()

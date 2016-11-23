@@ -23,12 +23,6 @@ define [
                 (discipline) ->
                   discipline.get('name').indexOf(criterion) > -1
             )
-            list_layout.on 'childview:discipline:new', ->
-              console.log 'Showing new discipline dialog'
-              CDSCeunes.regions.showChildView 'dialog', new (View.Form)(
-                model: CDSCeunes.dataRequest 'discipline:entity:new'
-              )
-              return
 
             list_disciplines = new (View.DisciplinesList)(collection: filtered_disciplines)
 
@@ -37,9 +31,26 @@ define [
               list_layout.showChildView 'disciplinesRegion', list_disciplines
               return # end show
 
+            list_layout.on 'childview:discipline:new', ->
+              console.log 'Showing new discipline dialog'
+              form_view = new (View.Form)(
+                model: CDSCeunes.dataRequest 'discipline:entity:new'
+              )
+              CDSCeunes.regions.showChildView 'dialog', form_view
+              form_view.on "discipline:form:submit", (data) ->
+                $.when(CDSCeunes.dataRequest 'discipline:entity:new').done (discipline) ->
+                  discipline.save(data,
+                    success: (data) ->
+                      disciplines.add(discipline)
+                      CDSCeunes.regions.getRegion('dialog').empty()
+                      return
+                  )
+                  return
+                return
+              return
+            #return # end list layout
             CDSCeunes.regions.showChildView 'main', list_layout
-            return # end promise
-
+            #return # end promise
 
           return # end require
         return # end list
