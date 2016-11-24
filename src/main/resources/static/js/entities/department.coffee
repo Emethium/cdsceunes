@@ -8,11 +8,6 @@ define [
       defaults:
         name: ''
         center: ''
-      initialize: ->
-        @bind 'change', ->
-          @save()
-          return
-        return
     )
 
     collection = Backbone.Collection.extend(

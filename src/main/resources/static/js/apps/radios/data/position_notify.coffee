@@ -8,6 +8,7 @@ define [
     Position: Marionette.Object.extend(
       channelName: 'data-request'
       radioRequests:
+        'position:entity:new': 'newPosition'
         'position:entity': 'getPositionEntity'
         'position:entities': 'getPositionEntities'
       getPositionEntities: ->
@@ -32,6 +33,8 @@ define [
             defer.resolve undefined
             return
         defer.promise()
+      newPosition: ->
+        new (Entities.Position)
     )
 
   new (Request.Position)

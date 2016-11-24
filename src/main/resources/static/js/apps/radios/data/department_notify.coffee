@@ -8,6 +8,7 @@ define [
     Department: Marionette.Object.extend(
       channelName: 'data-request'
       radioRequests:
+        'department:entity:new': 'newDepartment'
         'department:entity': 'getDepartmentEntity'
         'department:entities': 'getDepartmentEntities'
       getDepartmentEntities: ->
@@ -32,6 +33,8 @@ define [
             defer.resolve undefined
             return
         defer.promise()
+      newDepartment: ->
+        new (Entities.Department)
     )
 
   new (Request.Department)

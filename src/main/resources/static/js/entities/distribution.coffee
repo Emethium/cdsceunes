@@ -6,11 +6,6 @@ define [
     Entities.Distribution = Backbone.Model.extend(
       urlRoot: '/api/v1/semesters'
       defaults: {}
-      initialize: ->
-        @bind 'change', ->
-          @save()
-          return
-        return
     )
     Entities.DistributionCollection = Backbone.Collection.extend(
       url: '/api/v1/semesters'

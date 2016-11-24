@@ -42,7 +42,7 @@ define [
                 $.when(CDSCeunes.dataRequest 'position:entity:new').done (position) ->
                   position.save(data,
                     success: (data) ->
-                      positions.add(teacher)
+                      positions.add(position)
                       CDSCeunes.regions.getRegion('dialog').empty()
                       return
                   )

@@ -38,10 +38,11 @@ define [
               )
               CDSCeunes.regions.showChildView 'dialog', form_view
               form_view.on "department:form:submit", (data) ->
-                $.when(CDSCeunes.dataRequest 'department:entity:new').done (department) ->
-                  department.save(data,
+                $.when(CDSCeunes.dataRequest 'department:entity:new').done (_department) ->
+                  console.log data
+                  _department.save(data,
                     success: (data) ->
-                      departments.add(department)
+                      departments.add(_department)
                       CDSCeunes.regions.getRegion('dialog').empty()
                       return
                   )

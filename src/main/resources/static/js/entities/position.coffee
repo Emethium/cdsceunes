@@ -3,29 +3,21 @@ define [
   'backbone'
 ], (CDSCeunes, Backbone) ->
   Entities = ->
-    Position = Backbone.Model.extend(
+    model = Backbone.Model.extend(
       urlRoot: '/api/v1/positions'
       defaults:
         name: ''
         minWorkload: 0
         maxWorkload: 0
         currentWorkload: 0
-        commission: ''
-      shouldBeShown: (search) ->
-        name = @get('name').toLowerCase()
-        login = @get('login').toLowerCase()
-        name.indexOf(search) > -1 or login.indexOf(search) > -1
     )
 
-    PositionsCollection = Backbone.Collection.extend(
+    collection = Backbone.Collection.extend(
       url: '/api/v1/positions'
-      model: Position
+      model: model
       comparator: 'name'
     )
 
-    return {
-      Position: Position
-      PositionsCollection: PositionsCollection
-    }
+    Position: model, PositionsCollection: collection
 
   Entities()

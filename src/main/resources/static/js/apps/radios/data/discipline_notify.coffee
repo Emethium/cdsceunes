@@ -8,6 +8,7 @@ define [
     Discipline: Marionette.Object.extend(
       channelName: 'data-request'
       radioRequests:
+        'discipline:entity:new': 'newDiscipline'
         'discipline:entity': 'getDisciplineEntity'
         'discipline:entities': 'getDisciplineEntities'
       getDisciplineEntities: ->
@@ -32,6 +33,8 @@ define [
             defer.resolve undefined
             return
         defer.promise()
+      newDiscipline: ->
+        new (Entities.Discipline)
     )
 
   new (Request.Discipline)
