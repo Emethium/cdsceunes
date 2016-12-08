@@ -61,7 +61,8 @@ require([
   "cs!apps/routers/distribution_router",
   "cs!apps/routers/department_router",
   "cs!apps/routers/discipline_router",
-  "cs!apps/routers/position_router"
+  "cs!apps/routers/position_router",
+  "cs!apps/routers/commission_router"
 ], function(CDSCeunes){
   CDSCeunes.start();
 });

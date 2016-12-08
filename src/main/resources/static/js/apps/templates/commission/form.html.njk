@@ -1,0 +1,47 @@
+<form id = "commission-form">
+    <div class="row">
+        <div class="small-5 columns">
+            <label for="name" class="text-right middle">
+                <strong>Nome</strong>
+            </label>
+        </div>
+        <div class="small-7 columns end">
+            <input type="text" placeholder="Nome" name="name" value="{{ model.name }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-5 columns">
+            <label for="department" class="text-right middle">
+                <strong>Departamento</strong>
+            </label>
+        </div>
+        <div class="small-7 columns end">
+            <input type="text" placeholder="Departamento" name="department" value="{{ model.department }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-5 columns">
+            <label for="minNumber" class="text-right middle">
+                <strong>Número mínimo de componentes</strong>
+            </label>
+        </div>
+        <div class="small-7 columns end">
+            <input type="text" placeholder="Numero" name="minNumber" value="{{ model.minNumber }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-5 columns">
+            <label for="maxNumber" class="text-right middle">
+                <strong>Número máximo de componentes</strong>
+            </label>
+        </div>
+        <div class="small-7 columns end">
+            <input type="text" placeholder="Numero" name="maxNumber" value="{{ model.maxNumber }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="medium-offset-5 small-5 columns">
+            <input type="submit" class="small hollow button js-submit-commission" value="Enviar"/>
+        </div>
+    </div>
+</form>
