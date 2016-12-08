@@ -38,17 +38,18 @@ define [
               )
               CDSCeunes.regions.showChildView 'dialog', form_view
               form_view.on "commission:form:submit", (data) ->
-                $.when(CDSCeunes.dataRequest 'commission:entity:new').done (commission) ->
+                $.when(CDSCeunes.dataRequest 'commission:entity:new').done (_commission) ->
                   console.log data
-                  commission.save(data,
+                  _commission.save(data,
                     success: (data) ->
-                      commissions.add(commission)
+                      commissions.add(_commission)
                       CDSCeunes.regions.getRegion('dialog').empty()
                       return
                   )
                   return
                 return
               return
+            #return # end list layout
             CDSCeunes.regions.showChildView 'main', list_layout
 
           return # end request

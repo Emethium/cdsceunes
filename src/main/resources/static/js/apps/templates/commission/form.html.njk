@@ -10,14 +10,16 @@
         </div>
     </div>
     <div class="row">
-        <div class="small-5 columns">
-            <label for="department" class="text-right middle">
-                <strong>Departamento</strong>
-            </label>
-        </div>
-        <div class="small-7 columns end">
-            <input type="text" placeholder="Departamento" name="department" value="{{ model.department }}">
-        </div>
+      <div class="small-5 columns">
+        <label for="department" class="text-right middle"><strong>Departamento</strong></label>
+      </div>
+      <div class="small-7 columns end">
+        <select form="commission-form" name="department[id]" required>
+          {% for department in departments %}
+            <option value="{{department.id}}">{{department.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
     </div>
     <div class="row">
         <div class="small-5 columns">
