@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.ufes.cdsceunes.controller.AbstractController;
 import br.ufes.cdsceunes.model.OfferedClass;
 import br.ufes.cdsceunes.model.Semester;
 import br.ufes.cdsceunes.repository.OfferedClassRepository;
