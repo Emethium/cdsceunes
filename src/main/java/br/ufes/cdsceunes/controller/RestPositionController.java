@@ -13,7 +13,7 @@ import br.ufes.cdsceunes.repository.PositionRepository;
 
 @RequestMapping("/api/v1/positions")
 @RestController
-public class PositionController extends AbstractController<Position, PositionRepository> {
+public class RestPositionController extends AbstractController<Position, PositionRepository> {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Position> updatePosition(@PathVariable Long id, @RequestBody Position position) {

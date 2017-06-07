@@ -13,7 +13,7 @@ import br.ufes.cdsceunes.repository.ScenarioRepository;
 
 @RequestMapping("/api/v1/scenarios")
 @RestController
-public class ScenarioController extends AbstractController<Scenario, ScenarioRepository> {
+public class RestScenarioController extends AbstractController<Scenario, ScenarioRepository> {
 
 	
 	/*@RequestMapping(value = "/{id}", method = RequestMethod.GET)

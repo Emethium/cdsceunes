@@ -16,7 +16,7 @@ import br.ufes.cdsceunes.repository.OfferedClassRepository;
 
 @RequestMapping("/api/v1/classes")
 @RestController
-public class OfferedClassController extends AbstractController<OfferedClass, OfferedClassRepository> {
+public class RestOfferedClassController extends AbstractController<OfferedClass, OfferedClassRepository> {
 
 	@RequestMapping(method = RequestMethod.GET, path = "/{year}/{semester}")
 	public ResponseEntity<List<OfferedClass>> listBySemester(@PathVariable String year, @PathVariable String semester) {

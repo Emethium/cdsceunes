@@ -15,7 +15,7 @@ import br.ufes.cdsceunes.repository.PreferencesRepository;
 
 @RequestMapping("/api/v1/preferences")
 @RestController
-public class PreferencesController extends AbstractController<Preferences, PreferencesRepository> {
+public class RestPreferencesController extends AbstractController<Preferences, PreferencesRepository> {
 
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)

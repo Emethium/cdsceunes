@@ -13,7 +13,7 @@ import br.ufes.cdsceunes.repository.DisciplineRepository;
 
 @RequestMapping("/api/v1/disciplines")
 @RestController
-public class DisciplineController extends AbstractController<Discipline, DisciplineRepository> {
+public class RestDisciplineController extends AbstractController<Discipline, DisciplineRepository> {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Discipline> updateDiscipline(@PathVariable Long id, @RequestBody Discipline discipline) {

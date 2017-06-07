@@ -8,7 +8,7 @@ import br.ufes.cdsceunes.repository.SemesterRepository;
 
 @RequestMapping("/api/v1/semesters")
 @RestController
-public class SemesterController extends AbstractController<Semester, SemesterRepository> {
+public class RestSemesterController extends AbstractController<Semester, SemesterRepository> {
 
 
 }

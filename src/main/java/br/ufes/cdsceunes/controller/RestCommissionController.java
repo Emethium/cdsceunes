@@ -8,6 +8,6 @@ import br.ufes.cdsceunes.repository.CommissionRepository;
 
 @RequestMapping("/api/v1/commissions")
 @RestController
-public class CommissionController extends AbstractController<Commission, CommissionRepository> {
+public class RestCommissionController extends AbstractController<Commission, CommissionRepository> {
 
 }

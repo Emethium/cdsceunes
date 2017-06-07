@@ -13,7 +13,7 @@ import br.ufes.cdsceunes.repository.TeacherRepository;
 
 @RequestMapping("/api/v1/teachers")
 @RestController
-public class TeacherController extends AbstractController<Teacher, TeacherRepository> {
+public class RestTeacherController extends AbstractController<Teacher, TeacherRepository> {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Teacher> updateTeacher(@PathVariable Long id, @RequestBody Teacher teacher) {

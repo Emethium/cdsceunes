@@ -13,7 +13,7 @@ import br.ufes.cdsceunes.repository.DepartmentRepository;
 
 @RequestMapping("/api/v1/departments")
 @RestController
-public class DepartmentController extends AbstractController<Department, DepartmentRepository> {
+public class RestDepartmentController extends AbstractController<Department, DepartmentRepository> {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Department> updateDepartment(@PathVariable Long id, @RequestBody Department department) {
