@@ -29,6 +29,8 @@ public class UserDetails extends AbstractModel {
 
 	@JsonIgnore
 	private String password;
+	
+	private Boolean enabled;
 
 	@ManyToMany(fetch=FetchType.EAGER)
 	private List<Role> roles;

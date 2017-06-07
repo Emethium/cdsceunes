@@ -1,4 +1,4 @@
-package br.ufes.cdsceunes.controller;
+package br.ufes.cdsceunes.controller.rest;
 
 import java.util.List;
 
