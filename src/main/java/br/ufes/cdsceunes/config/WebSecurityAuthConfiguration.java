@@ -1,24 +1,17 @@
 package br.ufes.cdsceunes.config;
 
-import java.util.stream.Collectors;
+import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configurers.GlobalAuthenticationConfigurerAdapter;
-import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-
-import br.ufes.cdsceunes.repository.UserDetailsRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
-public class WebSecurityConfiguration extends GlobalAuthenticationConfigurerAdapter {
+public class WebSecurityAuthConfiguration extends GlobalAuthenticationConfigurerAdapter {
 
-	@Autowired
+	/*@Autowired
 	private UserDetailsRepository users;
 	
 	@Override
@@ -39,5 +32,21 @@ public class WebSecurityConfiguration extends GlobalAuthenticationConfigurerAdap
 						AuthorityUtils.createAuthorityList(roles));
 			}
 		};
+	}*/
+	
+	private String usersQuery;
+	private String rolesQuery;
+	@Autowired
+	private DataSource dataSource;
+	private BCryptPasswordEncoder bcryptEncoder;
+	
+	@Override
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth
+			.jdbcAuthentication()
+				.usersByUsernameQuery(usersQuery)
+				.authoritiesByUsernameQuery(rolesQuery)
+				.dataSource(dataSource)
+				.passwordEncoder(bcryptEncoder);
 	}
 }

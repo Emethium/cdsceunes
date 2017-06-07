@@ -6,13 +6,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-import br.ufes.cdsceunes.util.security.auth.JWTAuthenticationFailureHandler;
-import br.ufes.cdsceunes.util.security.auth.JWTAuthenticationSuccessHandler;
-import br.ufes.cdsceunes.util.security.auth.StatelessAuthenticationFilter;
-import br.ufes.cdsceunes.util.security.auth.TokenAuthenticationService;
+import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -20,6 +14,9 @@ import br.ufes.cdsceunes.util.security.auth.TokenAuthenticationService;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
+	private AccessDeniedHandler deniedHandler;
+	
+	/*@Autowired
 	private UserDetailsService details;
 
 	public WebSecurityConfig() {
@@ -40,6 +37,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.authorizeRequests().antMatchers("/api/**").authenticated().and()
 				.addFilterBefore(new StatelessAuthenticationFilter(tokenAuthenticationService),
 						UsernamePasswordAuthenticationFilter.class);
+	}*/
+	
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.csrf().disable()
+			.authorizeRequests()
+				.antMatchers("/").permitAll()
+				.anyRequest().authenticated()
+				.and()
+			.formLogin()
+				.loginPage("/")
+				.permitAll()
+				.and()
+			.logout()
+				.permitAll();			
 	}
+	
 
 }
