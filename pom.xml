@@ -139,14 +139,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<resources>
-        <resource>
-            <directory>${project.basedir}/src/main/resources/static/js/front</directory>
-        </resource>
-        <resource>
-            <directory>${project.build.directory}/generated-resources</directory>
-        </resource>
-    </resources>
 	</build>
 
 </project>

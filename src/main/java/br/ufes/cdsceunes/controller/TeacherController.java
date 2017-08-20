@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.ufes.cdsceunes.model.Teacher;
 import br.ufes.cdsceunes.repository.TeacherRepository;
 
-@CrossOrigin(origins = "http://localhost:4200")
+
 @RequestMapping("/api/v1/teachers")
 @RestController
 public class TeacherController extends AbstractController<Teacher, TeacherRepository> {
