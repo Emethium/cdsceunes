@@ -10,4 +10,5 @@ import 'rxjs/add/operator/map';
 })
 
 export class AppComponent {
+  title = 'CDSceunes';
 }
