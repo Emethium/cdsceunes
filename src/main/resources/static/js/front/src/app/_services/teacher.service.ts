@@ -7,7 +7,7 @@ import { Teacher } from '../_models/teacher';
 @Injectable()
 export class TeacherService {
   // URL to the Web API
-  private teachersUrl = 'api/v1/teachers';
+  private teachersUrl = 'api/teachers';
   private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: Http) {}
