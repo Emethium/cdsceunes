@@ -1,13 +1,16 @@
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/index';
 import { TeachersComponent } from './teachers/teachers.component';
+import { DepartmentsComponent } from './departments/departments.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full'},
     { path: 'login', component: LoginComponent },
     { path: 'teachers', component: TeachersComponent},
+    { path: 'departments', component: DepartmentsComponent},
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

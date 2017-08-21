@@ -1,16 +1,16 @@
-<h2>Todos os professores</h2>
-<div>
-  <label>Nome:</label> <input #teacherName />
-  <button (click)="add(teacherName.value); teacherName.value=''">
-    Adicionar
-  </button>
+<h2 class="headertekst">Todos os professores</h2>
+<div id="inner">
+  <div>
+    <label>Nome:</label> <input #teacherName />
+    <button (click)="add(teacherName.value); teacherName.value=''">
+          Adicionar
+        </button>
+  </div>
+  <ul class="teachers">
+    <li *ngFor="let teacher of teachers" (click)="onSelect(teacher)" [class.selected]="teacher === selectedTeacher">
+      <span class="badge">{{teacher.id}}</span>
+      <span>{{teacher.name}}</span>
+      <button class="delete" (click)="delete(teacher); $event.stopPropagation()">x</button>
+    </li>
+  </ul>
 </div>
-<ul class="teachers">
-  <li *ngFor="let teacher of teachers" (click)="onSelect(teacher)"
-      [class.selected]="teacher === selectedTeacher">
-    <span class="badge">{{teacher.id}}</span>
-    <span>{{teacher.name}}</span>
-    <button class="delete"
-      (click)="delete(teacher); $event.stopPropagation()">x</button>
-  </li>
-</ul>

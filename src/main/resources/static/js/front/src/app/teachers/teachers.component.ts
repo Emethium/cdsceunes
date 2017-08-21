@@ -31,8 +31,8 @@ export class TeachersComponent implements OnInit {
         name = name.trim();
         if (!name) { return; }
         this.teacherService.create(name)
-          .then(hero => {
-            this.teachers.push(hero);
+          .then(teacher => {
+            this.teachers.push(teacher);
           });
     }
 
