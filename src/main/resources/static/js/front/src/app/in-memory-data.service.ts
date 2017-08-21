@@ -24,15 +24,53 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const departments = [
-      {id: 1, name:'DCAB'},
-      {id: 2, name:'DCN'},
-      {id: 3, name:'DCS'},
-      {id: 4, name:'DCEL'},
-      {id: 5, name:'DECH'},
-      {id: 6, name:'DETEC'},
-      {id: 7, name:'DMA'},
+      {id: 1, name: 'DCAB'},
+      {id: 2, name: 'DCN'},
+      {id: 3, name: 'DCS'},
+      {id: 4, name: 'DCEL'},
+      {id: 5, name: 'DECH'},
+      {id: 6, name: 'DETEC'},
+      {id: 7, name: 'DMA'},
     ];
-    
-    return {teachers, departments};
+
+    const disciplines = [
+      {id: 1, name: 'Programação I'},
+      {id: 2, name: 'Introdução a Engenharia de Computação'},
+      {id: 3, name: 'Circuitos Elétricos I'},
+      {id: 4, name: 'Programação II'},
+      {id: 5, name: 'Práticas de Laboratório'},
+      {id: 6, name: 'Circuitos Elétricos II'},
+      {id: 7, name: 'Estrutura de Dados I'},
+      {id: 8, name: 'Eletromagnetismo II'},
+      {id: 9, name: 'Estrutura de Dados II'},
+      {id: 10, name: 'Arquitetura de Computadores'},
+      {id: 11, name: 'Programação III'},
+      {id: 12, name: 'Sinais e Sistemas'},
+      {id: 13, name: 'Sistemas Operacionais'},
+      {id: 14, name: 'Eletrônica Básica I'},
+      {id: 15, name: 'Instalações Elétricas'},
+      {id: 16, name: 'Engenharia de Sofware'},
+      {id: 17, name: 'Eletrônica Digital'},
+      {id: 18, name: 'Linguagens de Programação'},
+      {id: 19, name: 'Análise e Modelagem de Sistemas Dinâmicos'},
+      {id: 20, name: 'Eletrônica Básica II'},
+      {id: 21, name: 'Laboratório de Controle Automático'},
+      {id: 22, name: 'Teleprocessamento'},
+      {id: 23, name: 'Processos Estocásticos'},
+      {id: 24, name: 'Computação Gráfica'},
+      {id: 25, name: 'Sistemas Digitais'},
+      {id: 26, name: 'Linguagens Formais e Autômatos'},
+      {id: 27, name: 'Sistemas Realimentados'},
+      {id: 28, name: 'Sistemas Embarcados'},
+      {id: 29, name: 'Redes de Computadores'},
+      {id: 30, name: 'Fundamentos da Teoria da Computação'},
+      {id: 31, name: 'Banco de Dados'},
+      {id: 32, name: 'Compiladores'},
+      {id: 33, name: 'Avaliação de Desempenho de Sistemas Computacionais'},
+      {id: 34, name: 'Projeto de Graduação I'},
+      {id: 35, name: 'Projeto de Graduação II'}
+    ];
+
+    return {teachers, departments, disciplines};
   }
 }

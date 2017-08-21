@@ -10,6 +10,8 @@ import { TeachersComponent } from './teachers/teachers.component';
 import { TeacherService } from './_services/teacher.service';
 import { DepartmentsComponent } from './departments/departments.component';
 import { DepartmentService } from './_services/department.service';
+import { DisciplineService } from './_services/discipline.service';
+import { DisciplinesComponent } from './disciplines/disciplines.component';
 
 // Imports for simulating a Web API - testing purposes only
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api/in-memory-web-api.module';
@@ -20,7 +22,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     AppComponent,
     LoginComponent,
     TeachersComponent,
-    DepartmentsComponent
+    DepartmentsComponent,
+    DisciplinesComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { InMemoryDataService } from './in-memory-data.service';
   providers: [
     AppComponent,
     TeacherService,
-    DepartmentService
+    DepartmentService,
+    DisciplineService
   ],
   bootstrap: [AppComponent]
 })

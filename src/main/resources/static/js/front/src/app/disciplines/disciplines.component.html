@@ -1,0 +1,16 @@
+<h2 class="headertekst">Todas as Disciplinas</h2>
+<div id="inner">
+  <div>
+    <label>Nome:</label> <input #disciplineName />
+    <button (click)="add(disciplineName.value); disciplineName.value=''">
+          Adicionar
+        </button>
+  </div>
+  <ul class="disciplines">
+    <li *ngFor="let discipline of disciplines" (click)="onSelect(discipline)" [class.selected]="discipline === selectedDiscipline">
+      <span class="badge">{{discipline.id}}</span>
+      <span>{{discipline.name}}</span>
+      <button class="delete" (click)="delete(discipline); $event.stopPropagation()">x</button>
+    </li>
+  </ul>
+</div>
