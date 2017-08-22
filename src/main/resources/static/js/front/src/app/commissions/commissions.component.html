@@ -1,0 +1,16 @@
+<h2 class="headertekst">Todas as Comissões</h2>
+<div id="inner">
+  <div>
+    <label>Nome:</label> <input #commissionName />
+    <button (click)="add(commissionName.value); commissionName.value=''">
+          Adicionar
+        </button>
+  </div>
+  <ul class="commissions">
+    <li *ngFor="let commission of commissions" (click)="onSelect(commission)" [class.selected]="commission === selectedCommission">
+      <span class="badge">{{commission.id}}</span>
+      <span>{{commission.name}}</span>
+      <button class="delete" (click)="delete(commission); $event.stopPropagation()">x</button>
+    </li>
+  </ul>
+</div>

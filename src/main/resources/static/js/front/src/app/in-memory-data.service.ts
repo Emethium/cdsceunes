@@ -24,13 +24,13 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const departments = [
-      {id: 1, name: 'DCAB'},
-      {id: 2, name: 'DCN'},
-      {id: 3, name: 'DCS'},
-      {id: 4, name: 'DCEL'},
-      {id: 5, name: 'DECH'},
-      {id: 6, name: 'DETEC'},
-      {id: 7, name: 'DMA'},
+      {id: 1, name: 'DCAB - Departamento de Ciências Agrárias e Biológicas'},
+      {id: 2, name: 'DCN - Departamento de Ciências Naturais'},
+      {id: 3, name: 'DCS - Departamento de Ciências da Saúde'},
+      {id: 4, name: 'DCEL - Departamento de Computação e Eletrônica'},
+      {id: 5, name: 'DECH - Departamento de Educação e Ciências Humanas'},
+      {id: 6, name: 'DETEC - Departamento de Engenharias e Tecnologia'},
+      {id: 7, name: 'DMA - Departamento de Matemática Aplicada'},
     ];
 
     const disciplines = [
@@ -71,6 +71,13 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 35, name: 'Projeto de Graduação II'}
     ];
 
-    return {teachers, departments, disciplines};
+    const commissions = [
+      {id: 1, name: 'Comissão de Ensino'},
+      {id: 2, name: 'Comissão de Infraestrutura'},
+      {id: 3, name: 'Comissão de Pesquisa e Extensão'},
+      {id: 4, name: 'Comissão de Recursos Humanos'},
+    ];
+
+    return {teachers, departments, disciplines, commissions};
   }
 }
