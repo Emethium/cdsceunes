@@ -12,6 +12,7 @@ import { Commission } from './../_models/commission';
 
 export class CommissionsComponent implements OnInit {
     commissions: Commission[];
+    selectedCommission: Commission;
 
     constructor(
         private route: ActivatedRoute,
@@ -25,6 +26,14 @@ export class CommissionsComponent implements OnInit {
 
     ngOnInit(): void {
         this.getCommissions();
+    }
+
+    onSelect(commission: Commission): void {
+        this.selectedCommission = commission;
+     }
+
+    gotoDetail(): void {
+        this.router.navigate(['commissions/detail', this.selectedCommission.id]);
     }
 
     add(name: string): void {

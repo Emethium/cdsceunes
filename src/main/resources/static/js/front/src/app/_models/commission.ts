@@ -3,5 +3,6 @@ export class Commission {
     name: string;
     minNumber: number;
     maxNumber: number;
+    teachers: string;
     scope: string;
 }

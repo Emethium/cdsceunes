@@ -14,6 +14,7 @@ import { DisciplinesComponent } from './disciplines/disciplines.component';
 import { DisciplineService } from './_services/discipline.service';
 import { CommissionsComponent } from './commissions/commissions.component';
 import { CommissionService } from './_services/commission.service';
+import { CommissionDetailComponent } from './commissions/commission-detail.component';
 import { PositionsComponent } from './positions/positions.component';
 import { PositionService } from './_services/position.service';
 
@@ -29,6 +30,7 @@ import { InMemoryDataService } from './in-memory-data.service';
     DepartmentsComponent,
     DisciplinesComponent,
     CommissionsComponent,
+    CommissionDetailComponent,
     PositionsComponent
   ],
   imports: [

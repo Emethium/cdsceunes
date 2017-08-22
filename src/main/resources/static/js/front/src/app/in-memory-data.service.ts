@@ -72,10 +72,14 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const commissions = [
-      {id: 1, name: 'Comissão de Ensino'},
-      {id: 2, name: 'Comissão de Infraestrutura'},
-      {id: 3, name: 'Comissão de Pesquisa e Extensão'},
-      {id: 4, name: 'Comissão de Recursos Humanos'},
+      {id: 1, name: 'Comissão de Ensino', minNumber: 1, maxNumber: 3,
+        teachers: 'Luciana Lee, Sandra Regina Rocha Silva e Silvia das Dores Rissino'},
+      {id: 2, name: 'Comissão de Infraestrutura', minNumber: 1, maxNumber: 3,
+      teachers: 'Helder Roberto de Oliveira Rocha, Wilian Hiroshi Hisatugu e Aníbal Cotrina Atencio'},
+      {id: 3, name: 'Comissão de Pesquisa e Extensão', minNumber: 1, maxNumber: 3,
+        teachers: 'Francisco de Assis Souza dos Santos, Flávio Duarte Couto Oliveira e Anibal Cotrina Atencio'},
+      {id: 4, name: 'Comissão de Recursos Humanos', minNumber: 1, maxNumber: 3,
+        teachers: 'Daniel José Custódio Coura, Wanderley Cardoso Celeste e Luís Otávio Rigo Júnior'}
     ];
 
     const positions = [

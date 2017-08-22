@@ -1,5 +1,5 @@
 <h2 class="headertekst">Todas as Comissões</h2>
-<div id="inner">
+<div id="inner" style="float: left; width: 50%;">
   <div>
     <label>Nome:</label> <input #commissionName />
     <button (click)="add(commissionName.value); commissionName.value=''">
@@ -13,4 +13,12 @@
       <button class="delete" (click)="delete(commission); $event.stopPropagation()">x</button>
     </li>
   </ul>
+</div>
+<div *ngIf="selectedCommission" style="float: left; width: 50%;">
+  <h2>
+    {{selectedCommission.name}}
+  </h2>
+  <span class="badge" style="white-space: pre-line">Número mínimo de integrantes: </span><span>{{selectedCommission.minNumber}}</span><br>
+  <span class="badge" style="white-space: pre-line">Número máximo de integrantes: </span><span>{{selectedCommission.maxNumber}}</span><br><br>
+  <button (click)="gotoDetail()">Ver Detalhes</button>
 </div>
