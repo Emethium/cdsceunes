@@ -78,6 +78,19 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 4, name: 'Comissão de Recursos Humanos'},
     ];
 
-    return {teachers, departments, disciplines, commissions};
+    const positions = [
+      {id: 1, name: 'Cargo 1'},
+      {id: 2, name: 'Cargo 2'},
+      {id: 3, name: 'Cargo 3'},
+      {id: 4, name: 'Cargo 4'},
+      {id: 5, name: 'Cargo 5'},
+      {id: 6, name: 'Cargo 6'},
+      {id: 7, name: 'Cargo 7'},
+      {id: 8, name: 'Cargo 8'},
+      {id: 9, name: 'Cargo 9'},
+      {id: 10, name: 'Cargo 10'},
+    ];
+
+    return {teachers, departments, disciplines, commissions, positions};
   }
 }

@@ -1,0 +1,16 @@
+<h2 class="headertekst">Todas as Cargos Administrativos</h2>
+<div id="inner">
+  <div>
+    <label>Nome:</label> <input #positionName />
+    <button (click)="add(positionName.value); positionName.value=''">
+          Adicionar
+        </button>
+  </div>
+  <ul class="positions">
+    <li *ngFor="let position of positions" (click)="onSelect(position)" [class.selected]="position === selectedPosition">
+      <span class="badge">{{position.id}}</span>
+      <span>{{position.name}}</span>
+      <button class="delete" (click)="delete(position); $event.stopPropagation()">x</button>
+    </li>
+  </ul>
+</div>

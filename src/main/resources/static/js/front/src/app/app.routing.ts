@@ -6,6 +6,7 @@ import { TeachersComponent } from './teachers/teachers.component';
 import { DepartmentsComponent } from './departments/departments.component';
 import { DisciplinesComponent } from './disciplines/disciplines.component';
 import { CommissionsComponent } from './commissions/commissions.component';
+import { PositionsComponent } from './positions/positions.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: 'departments', component: DepartmentsComponent},
     { path: 'disciplines', component: DisciplinesComponent},
     { path: 'commissions', component: CommissionsComponent},
+    { path: 'positions', component: PositionsComponent},
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
